@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".NoteActivity">
+
+    <ImageButton
+        android:id="@+id/back"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/back" />
+
+    <ImageButton
+        android:id="@+id/save"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/save" />
+
+    <ImageButton
+        android:id="@+id/delete"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@id/save"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/delete" />
+
+    <ImageButton
+        android:id="@+id/redo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@id/delete"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/redo" />
+
+    <ImageButton
+        android:id="@+id/undo"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="18dp"
+        android:layout_toStartOf="@id/redo"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/undo" />
+
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/back"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@null"
+        android:fontFamily="@font/bold"
+        android:hint="Title"
+        android:inputType="textCapWords"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginVertical="24dp"
+        android:background="@null"
+        android:fontFamily="@font/light"
+        android:gravity="top"
+        android:hint="Enter Your Text Here"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="3"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/secondText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text"
+        android:layout_marginHorizontal="24dp"
+        android:background="@null"
+        android:visibility="gone"
+        android:fontFamily="@font/light"
+        android:gravity="top"
+        android:hint="Add Text"
+        android:inputType="textCapSentences|textMultiLine"
+        android:minLines="3"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <ImageButton
+        android:id="@+id/image"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/image_disabled" />
+
+    <RelativeLayout
+        android:id="@+id/imageLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/camera"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/gallery"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_bg"
+            android:src="@drawable/camera_black" />
+
+        <TextView
+            android:id="@+id/cameraText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gallery"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@id/camera"
+            android:fontFamily="@font/light"
+            android:text="Camera"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/gallery"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            android:background="@drawable/round_bg"
+            android:src="@drawable/gallery_black" />
+
+        <TextView
+            android:id="@+id/galleryText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/camera"
+            android:fontFamily="@font/light"
+            android:text="Gallery"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/colorLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:layout_above="@id/textLayout"
+        android:layout_marginBottom="12dp"
+        android:layout_toEndOf="@id/image"
+        android:paddingStart="6dp"
+        android:paddingEnd="24dp"
+        android:visibility="gone"
+        tools:ignore="RtlSymmetry">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="RtlSymmetry">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="@color/white" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="@color/black" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#797473" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#7758ff" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#fe1f62" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#f00f0d" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#97ff07" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#1cffc0" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#074FB1" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#6F00FF" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#FE04B6" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#208B07" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#99E6FE" />
+
+                <ImageButton
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="24dp"
+                    android:background="@drawable/round_bg"
+                    android:backgroundTint="#FA688C" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:id="@+id/textLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="84dp"
+        android:layout_toEndOf="@id/image"
+        android:visibility="gone">
+
+        <ImageButton
+            android:id="@+id/addText"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/style"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_bg"
+            android:src="@drawable/text_editor_black" />
+
+        <TextView
+            android:id="@+id/addTextText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/style"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@id/addText"
+            android:fontFamily="@font/light"
+            android:text="Add Text"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/style"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/color"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/round_bg"
+            android:src="@drawable/font" />
+
+        <TextView
+            android:id="@+id/styleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/color"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="24dp"
+            android:layout_toEndOf="@id/style"
+            android:fontFamily="@font/light"
+            android:text="Style"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/color"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="18dp"
+            android:background="@drawable/round_bg"
+            android:src="@drawable/color_circle" />
+
+        <TextView
+            android:id="@+id/colorText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@id/color"
+            android:fontFamily="@font/light"
+            android:text="Color"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+
+    <ImageButton
+        android:id="@+id/textIcon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="24dp"
+        android:layout_toEndOf="@id/image"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/text_disabled" />
+
+    <ImageButton
+        android:id="@+id/audio"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="18dp"
+        android:layout_marginBottom="24dp"
+        android:layout_toEndOf="@id/textIcon"
+        android:background="@drawable/round_bg"
+        android:src="@drawable/microphone_disabled" />
+
+
+</RelativeLayout>
